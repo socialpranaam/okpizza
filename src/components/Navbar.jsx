@@ -51,13 +51,13 @@ export default function Navbar() {
             <li key={item.id}>
               <button
                 onClick={() => handleScrollTo(item.id)}
-                className={`hover:text-lime-400 transition uppercase px-7 tracking-tighter cursor-pointer ${
-                  index != 0 ? "border-l border-dashed border-white" : ""
+                className={`hover:text-lime-400 transition uppercase px-7  cursor-pointer bebas-neue-regular text-2xl ${
+                  index != 0 ? "border-l border-dashed border-gray-500" : ""
                 }`}
               >
                 {item.label}
                 {item.isHot && (
-                <span className=" ml-2 bg-orange-500 text-white text-xl font-semibold px-3 font-[cursive] capitalize hover:bg-lime-400 hover:text-black ">
+                <span className=" ml-2 bg-orange-500 text-white text-xl font-semibold px-3 pacifico-regular capitalize hover:bg-lime-400 hover:text-black ">
                   Hot!
                 </span>
               )}
@@ -73,7 +73,7 @@ export default function Navbar() {
             icon={faMagnifyingGlass}
             className="text-xl hover:text-lime-400 cursor-pointer"
           />
-          <button className="border-2 border-white px-6 py-2 rounded-full text-white hover:bg-lime-400 hover:text-black transition text-xl font-semibold tracking-tighter uppercase cursor-pointer">
+          <button className="border-2 border-white px-6 py-2 rounded-full text-white hover:bg-lime-400 hover:text-black transition  font-semibold bebas-neue-regular text-2xl uppercase cursor-pointer">
             Book a Table
           </button>
         </div>

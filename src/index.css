@@ -1,1 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Permanent+Marker&display=swap');
 @import "tailwindcss";
+
+ 
+.slick-center .slide-inner {
+  border-left: 1px dashed #757171;
+  border-right: 1px dashed #757171;
+  transition: border-color 0.2s ease-in-out 0.15s;
+}
+
+.slide-inner {
+  border-left: 1px dashed transparent;
+  border-right: 1px dashed transparent;
+  transition: border-color 0.2s ease-in-out 0.15s;
+}
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+ 
+
+
