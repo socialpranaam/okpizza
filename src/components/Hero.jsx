@@ -139,10 +139,10 @@ export default function Hero() {
 
     {/* Text overlay */}
     <div className="absolute inset-0 flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-8xl mb-2 drop-shadow-lg">
+      <h1 className="text-4xl md:text-9xl mb-2 drop-shadow-lg bebas-neue-regular">
         {slides[current].title1}
       </h1>
-      <h1 className="text-4xl md:text-6xl font-semibold mb-4 drop-shadow-lg text-zinc-800">
+      <h1 className="text-4xl md:text-6xl font-semibold mb-4 drop-shadow-lg text-zinc-800 bebas-neue-regular">
         {slides[current].title2}
       </h1>
       <p className="text-lg md:text-3xl px-4 py-2 rounded-md inline-block drop-shadow-lg">

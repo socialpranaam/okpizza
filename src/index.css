@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Permanent+Marker&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Fredericka+the+Great&family=Mrs+Saint+Delafield&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Permanent+Marker&family=Roboto+Slab:wght@100..900&display=swap');
 @import "tailwindcss";
 
  
@@ -17,15 +19,71 @@
 
 .pacifico-regular {
   font-family: "Pacifico", cursive;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
 }
 
 .bebas-neue-regular {
   font-family: "Bebas Neue", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+.roboto-slab-small {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
+
+
+.fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* QuoteCarousel.css */
+.slick-dots {
+  top: 50px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 14px !important;
+  color: white !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: greenyellow !important; /* Active dot color */
+}
+
+/* NewsEventsSlider.css */
+.slick-prev,
+.slick-next {
+  background-color: #333;
+  border-radius: 9999px;
+  width: 30px;
+  height: 30px;
+  z-index: 50;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: white;
+  font-size: 20px;
+}
+
+.slick-prev {
+  left: -10px;
+}
+.slick-next {
+  right: -10px;
+}
+
+
+
+
 
 
  

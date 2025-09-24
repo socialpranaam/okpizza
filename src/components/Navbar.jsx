@@ -57,7 +57,7 @@ export default function Navbar() {
               >
                 {item.label}
                 {item.isHot && (
-                <span className=" ml-2 bg-orange-500 text-white text-xl font-semibold px-3 pacifico-regular capitalize hover:bg-lime-400 hover:text-black ">
+                <span className=" ml-2 bg-[#e74c3c] text-white text-sm font-semibold px-3 pacifico-regular capitalize hover:bg-lime-400 hover:text-black ">
                   Hot!
                 </span>
               )}

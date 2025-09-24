@@ -5,7 +5,11 @@ import {
   PizzaIcon,
   SandwichIcon,
 } from "lucide-react";
-import React, { useState } from "react";
+import pizzaImg from '../assets/images/pizzaImg.png'
+import burgerImg from '../assets/images/burgerImg.png'
+import drinksImg from '../assets/images/drinksImg.png'
+import dessertImg from '../assets/images/dessertImg.png'
+import {React ,useState } from "react";
 
 // Menu items data
 const menuItems = {
@@ -107,8 +111,8 @@ const MenuSection = () => {
           onClick={() => setCurrentMenu("pizza")}
           className="flex flex-col justify-center items-center"
         >
-          <PizzaIcon className="text-red-500 " size={80} />
-          <button className="text-red-500 hover:text-red-500 text-3xl pacifico-regular">
+          <img src={pizzaImg} alt="Pizza Image" className="h-36" />
+          <button className="text-[#F4452C] text-3xl pacifico-regular">
             Pizza
           </button>
         </div>
@@ -117,8 +121,8 @@ const MenuSection = () => {
           onClick={() => setCurrentMenu("sandwiches")}
           className="flex flex-col justify-center items-center"
         >
-          <SandwichIcon className="text-orange-500 " size={80} />
-          <button className="text-orange-500 hover:text-orange-500 text-3xl pacifico-regular">
+          <img src={burgerImg} alt="Burger Image" className="h-36" />
+          <button className="text-[#F1703D] text-3xl pacifico-regular">
             Sandwiches
           </button>
         </div>
@@ -126,8 +130,8 @@ const MenuSection = () => {
           onClick={() => setCurrentMenu("drinks")}
           className="flex flex-col justify-center items-center"
         >
-          <GlassWaterIcon className="text-blue-300 " size={80} />
-          <button className="text-blue-300 hover:text-blue-300 text-3xl pacifico-regular">
+          <img src={drinksImg} alt="Drinks Image" className="h-36" />
+          <button className="text-[#FEBA11] text-3xl pacifico-regular">
             Drinks
           </button>
         </div>
@@ -135,8 +139,8 @@ const MenuSection = () => {
           onClick={() => setCurrentMenu("desserts")}
           className="flex flex-col justify-center items-center"
         >
-          <DessertIcon className="text-yellow-300 " size={80} />
-          <button className="text-yellow-300 hover:text-yellow-300 text-3xl pacifico-regular">
+          <img src={dessertImg} alt="Dessert Image" className="h-36" />
+          <button className="text-[#CFDF5A] text-3xl pacifico-regular">
             Desserts
           </button>
         </div>
@@ -150,11 +154,11 @@ const MenuSection = () => {
               <h3 className="text-3xl font-semibold uppercase bebas-neue-regular">
                 {item.name}
               </h3>
-              <p className="text-3xl text-lime-400 mb-4 pacifico-regular">
+              <p className="text-3xl text-[#CFDF5A] mb-4 pacifico-regular">
                 {item.price}
               </p>
             </div>
-            <p className="text-sm font-bold pacifico-regular text-start py-2">
+            <p className="text-base font-bold text-start py-2 roboto-slab-small">
               {item.description}
             </p>
           </div>
@@ -163,7 +167,7 @@ const MenuSection = () => {
 
       {/* Explore Full Menu Button */}
       <div className="text-center mt-10">
-        <button className="text-lime-400 border-2 border-lime-400 text-2xl py-2 px-6 rounded-full hover:bg-lime-400 hover:text-black bebas-neue-regular">
+        <button className="text-[#CFDF5A] border-2 border-[#CFDF5A] text-2xl py-2 px-6 rounded-full hover:bg-lime-400 hover:text-black bebas-neue-regular">
           EXPLORE FULL MENU
         </button>
       </div>

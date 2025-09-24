@@ -12,6 +12,7 @@ import pizzaImage6 from "../assets/images/pizza6.jpg";
 import pizzaImage7 from "../assets/images/pizza7.jpg";
 import pizzaImage8 from "../assets/images/pizza8.jpg";
 import pizzaImage9 from "../assets/images/pizza9.jpg";
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const About = () => {
   const sliderRef = useRef(null);
@@ -68,7 +69,7 @@ const About = () => {
         <h2 className="text-xl md:text-2xl text-lime-300 font-semibold mt-4 pacifico-regular">
           Family Café & Pizzeria
         </h2>
-        <p className="mt-6 max-w-2xl text-gray-300 text-base md:text-lg leading-relaxed">
+        <p className="mt-6 max-w-2xl text-zinc-400 text-sm md:text-lg roboto-slab-small tracking-tight">
           Apparently we had reached a great height in the atmosphere, for the sky was a dead black,
           and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea
           to the level...
@@ -112,7 +113,7 @@ const Arrow = ({ direction, onClick }) => (
     onClick={onClick}
   >
     <span className="text-white text-xl">
-      {direction === "left" ? "←" : "→"}
+      {direction === "left" ? <ArrowLeft size={18}/> : <ArrowRight size={18}/>}
     </span>
   </div>
 );
