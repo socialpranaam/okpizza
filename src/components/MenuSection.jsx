@@ -106,7 +106,7 @@ const MenuSection = () => {
       </p>
 
       {/* Menu Categories */}
-      <div className="flex justify-center space-x-50 mb-8 py-10 border-b border-zinc-600">
+      <div className="flex flex-col md:flex-row justify-center space-x-50 mb-8 py-10 border-b border-zinc-600">
         <div
           onClick={() => setCurrentMenu("pizza")}
           className="flex flex-col justify-center items-center"
