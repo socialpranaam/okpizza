@@ -93,6 +93,7 @@ export default function Navbar() {
       />
       <button className="text-black bg-[#CFDF5A] px-6"><Search/></button>
       </div>
+
       
     </nav>
   );

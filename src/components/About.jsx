@@ -47,7 +47,7 @@ const About = () => {
         }
       },
       {
-        breakpoint: 640,
+        breakpoint: 650,
         settings: {
           slidesToShow: 1,
           centerMode: true,
@@ -60,10 +60,10 @@ const About = () => {
     <>
       {/* Hero Section */}
       <div
-        className="py-28 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4 lg:px-[10vw] overflow-x-hidden"
+        className="py-15 lg:py-28 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4 lg:px-[10vw] overflow-x-hidden"
         style={{ backgroundImage: "url('/heroBackground.jpg')" }}
       >
-        <h1 className="text-4xl md:text-7xl font-bold uppercase tracking-wide bebas-neue-regular">
+        <h1 className="text-7xl md:text-7xl font-bold uppercase tracking-wide bebas-neue-regular">
           Welcome to Pizza!
         </h1>
         <h2 className="text-xl md:text-2xl text-lime-300 font-semibold mt-4 pacifico-regular">
