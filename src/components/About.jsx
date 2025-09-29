@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useMediaQuery } from 'react-responsive';
 
 import pizzaImage1 from "../assets/images/pizza1.jpg";
 import pizzaImage2 from "../assets/images/pizza2.jpg";
@@ -16,6 +17,14 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const About = () => {
   const sliderRef = useRef(null);
+
+  // ✅ Media Queries
+  const isMobile = useMediaQuery({ maxWidth: 650 });
+  const isTablet = useMediaQuery({ minWidth: 651, maxWidth: 1024 });
+  const isDesktop = useMediaQuery({ minWidth: 1025 });
+
+  // ✅ Decide slidesToShow dynamically
+  const slidesToShow = isMobile ? 1 : isTablet ? 2 : 3;
 
   const pizzas = [
     { name: "Spicy Veg Trio", img: pizzaImage1 },
@@ -33,27 +42,11 @@ const About = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow, // ✅ media query se decide
     slidesToScroll: 1,
     arrows: false,
-    centerMode: true, // ✅ Enables center mode
+    centerMode: true,
     centerPadding: "0px",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          centerMode: true,
-        }
-      },
-      {
-        breakpoint: 650,
-        settings: {
-          slidesToShow: 1,
-          centerMode: true,
-        }
-      }
-    ]
   };
 
   return (
@@ -76,27 +69,26 @@ const About = () => {
         </p>
 
         {/* Pizza Slider */}
-        <div className="w-full mt-16 relative py-10">
+        <div className="w-full lg:mt-16 relative py-15 lg:py-10">
           <Slider ref={sliderRef} {...sliderSettings}>
             {pizzas.map((pizza, index) => (
               <div key={index} className="px-4">
-  <div className="slide-inner transition-all duration-300 delay-150 ease-in-out border-transparent border-x-2 border-dashed slick-center:border-gray-400 py-4">
-    <img
-      src={pizza.img}
-      alt={pizza.name}
-      className="w-80 h-80 object-cover rounded-full shadow-xl mx-auto mb-5"
-    />
-    <h2 className="text-2xl text-lime-300 font-semibold pacifico-regular text-center">
-      {pizza.name}
-    </h2>
-  </div>
-</div>
-
+                <div className="slide-inner transition-all duration-300 delay-150 ease-in-out border-transparent border-x-2 border-dashed slick-center:border-gray-400 py-4">
+                  <img
+                    src={pizza.img}
+                    alt={pizza.name}
+                    className="lg:w-80 lg:h-80 object-cover rounded-full shadow-xl mx-auto mb-5"
+                  />
+                  <h2 className="text-2xl text-lime-300 font-semibold pacifico-regular text-center">
+                    {pizza.name}
+                  </h2>
+                </div>
+              </div>
             ))}
           </Slider>
 
           {/* Arrows Centered Horizontally Below */}
-          <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
+          <div className="absolute -bottom-6 lg:-bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
             <Arrow direction="left" onClick={() => sliderRef.current?.slickPrev()} />
             <Arrow direction="right" onClick={() => sliderRef.current?.slickNext()} />
           </div>
@@ -113,7 +105,7 @@ const Arrow = ({ direction, onClick }) => (
     onClick={onClick}
   >
     <span className="text-white text-xl">
-      {direction === "left" ? <ArrowLeft size={18}/> : <ArrowRight size={18}/>}
+      {direction === "left" ? <ArrowLeft size={18}/> : <ArrowRight size={18}/> }
     </span>
   </div>
 );

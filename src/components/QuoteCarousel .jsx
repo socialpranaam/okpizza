@@ -51,7 +51,7 @@ const QuoteCarousel = () => {
             {quotes.map((quote, index) => (
               <div key={index} className="text-white pacifico-regular">
                 <QuoteIcon className='text-green mx-auto mb-20'/>
-                 <p className="text-xl sm:text-2xl md:text-4xl font-light leading-relaxed">{quote.text}</p>
+                 <p className="text-2xl md:text-4xl font-light leading-relaxed">{quote.text}</p>
                 <p className="mt-15 text-4xl font-bold text-white bebas-neue-regular">{quote.source}</p>
                 <p className=' text-2xl font-bold text-lime-500 py-2'>website-example.com</p>
               </div>

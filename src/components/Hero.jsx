@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import img1 from "../assets/images/crousel1.jpg";
 import img2 from "../assets/images/carousel2.jpg";
 import design1 from "../assets/images/design2.png";
@@ -79,13 +81,13 @@ export default function Hero() {
         onClick={prevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 p-3 rounded-full text-white z-30"
       >
-        <ChevronLeft size={28} />
+        <ChevronLeft className="w-5 h-5 md:w-7 md:h-7"  />
       </button>
       <button
         onClick={nextSlide}
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 p-3 rounded-full text-white z-30"
       >
-        <ChevronRight size={28} />
+        <ChevronRight  className="w-5 h-5 md:w-7 md:h-7"  />
       </button>
 
       {/* Pagination with preview */}
@@ -120,37 +122,123 @@ export default function Hero() {
           </div>
         ))}
       </div>
-     {/* Hero animation area (designs + text overlay) */}
-<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-center z-30 text-white">
-
-  {/* Designs wrapper */}
-  <div className="relative flex flex-col items-center">
-    {/* Design images (background-ish) */}
-    <img src={design4} alt="1st design" className="h-18 mb-2" />
-    <div className="flex flex-row justify-center items-center">
-        <img src={left} alt="1st design" className="" />
-        <img src={design1} alt="1st design" className="h-30 mt-1" />
-        <img src={right} alt="1st design" className="" />
-    </div>
-
-    <img src={design2} alt="2nd design" className="h-22" />
-    <img src={design3} alt="3rd design" className="h-18" />
-    <img src={design5} alt="3rd design" className="h-17 mt-2" />
-
-    {/* Text overlay */}
-    <div className="absolute inset-0 flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-9xl mb-2 drop-shadow-lg bebas-neue-regular">
-        {slides[current].title1}
-      </h1>
-      <h1 className="text-4xl md:text-6xl font-semibold mb-4 drop-shadow-lg text-zinc-800 bebas-neue-regular">
-        {slides[current].title2}
-      </h1>
-      <p className="text-lg md:text-3xl px-4 py-2 rounded-md inline-block drop-shadow-lg">
-        {slides[current].subtitle}
-      </p>
-    </div>
-  </div>
+{/* Hero animation area (designs + text overlay) */}
+<AnimatePresence mode="wait">
+  <motion.div
+    key={slides[current].id}
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -40 }}
+    transition={{ duration: 0.8 }}
+    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-center z-30 text-white"
+  >
+    {/* Designs wrapper */}
+    <div className="relative flex flex-col items-center">
+      <div style={{ perspective: "1000px" }}>
+  <motion.img
+    src={design4}
+    alt="design4"
+    className="h-12 lg:h-18 lg:mb-2 mb-1"
+    initial={{ rotateY: 0 }}
+    animate={{ rotateY: 360 }}
+    transition={{
+      duration: 1.5,
+      ease: "easeInOut",
+    }}
+    style={{
+      transformStyle: "preserve-3d",
+      backfaceVisibility: "hidden",
+    }}
+  />
 </div>
+
+
+      <div className="flex flex-row justify-center items-center">
+        <motion.img
+    src={left}
+    alt="left"
+    className="w-16 lg:w-30"
+    initial={{ x: -100, opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ delay: 0.3, duration: 0.6 }}
+  />
+
+        <motion.img
+          src={design1}
+          alt="center"
+          className="h-20 lg:h-30 mt-1"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        />
+         <motion.img
+    src={right}
+    alt="right"
+    className="w-16 lg:w-30"
+    initial={{ x: 100, opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ delay: 0.3, duration: 0.6 }}
+  />
+      </div>
+
+      <motion.img
+        src={design2}
+        alt="design2"
+        className="h-16 lg:h-22"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      />
+      <motion.img
+        src={design3}
+        alt="design3"
+        className="lg:h-18"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+      />
+      <motion.img
+        src={design5}
+        alt="design5"
+        className="h-12 lg:h-17 mt-1 lg:mt-2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.7, duration: 0.5 }}
+      />
+
+      {/* Text overlay */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <motion.h1
+          className="text-5xl md:text-9xl lg:mb-2 mt-4 lg:mt-0 drop-shadow-lg bebas-neue-regular"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
+          {slides[current].title1}
+        </motion.h1>
+
+        <motion.h1
+          className="text-4xl md:text-6xl font-semibold lg:mb-4 mt-6 lg:mt-0 drop-shadow-lg text-zinc-800 bebas-neue-regular"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
+          {slides[current].title2}
+        </motion.h1>
+
+        <motion.p
+          className="text-base md:text-3xl lg:px-4 py-2 rounded-md inline-block drop-shadow-lg"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.6 }}
+        >
+          {slides[current].subtitle}
+        </motion.p>
+      </div>
+    </div>
+  </motion.div>
+</AnimatePresence>
+
 
     </section>
   );

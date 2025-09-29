@@ -1,19 +1,49 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Menu, Search } from "lucide-react";
+import { Menu, Search, X } from "lucide-react";
+import { div } from "framer-motion/client";
+import MobileMenu from '../components/MobileMenu'
 
 const navItems = [
-  { id: "home", label: "Home" },
-  { id: "menu", label: "Menu", isHot: true },
-  { id: "features", label: "Features" },
-  { id: "shortcodes", label: "Shortcodes" },
+  {
+    id: "home",
+    label: "Home",
+    subItems: ["Pizza Restaurant", "Burger Restaurant"],
+  },
+  {
+    id: "menu",
+    label: "Menu",
+    isHot: true,
+    subItems: ["Menu Variant 1", "Menu Variant 2"],
+  },
+   {
+    id: "features",
+    label: "Features",
+    subItems: [
+      "About Us",
+      "What Customers Say",
+      "News",
+      "Table Booking",
+      "Contacts",
+    ],
+  },
+  { id: "shortcodes",
+    label: "Shortcodes",
+    subItems: [
+      "1",
+      "2",
+      "3",
+    ],
+  },
   { id: "posttypes", label: "Post Types" },
   { id: "shop", label: "Shop" },
 ];
 
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isopen, setIsopen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,17 +62,17 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`lg:fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-zinc-800 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-zinc-800 ${
         scrolled ? "lg:bg-zinc-800 shadow-md" : "lg:bg-transparent"
       }`}
     >
-      <div className="px-[3vw] lg:px-[3vw] flex flex-col md:flex-row items-center justify-between py-8 lg:py-0">
+      <div className="px-[3vw] lg:px-[3vw] flex items-center justify-between lg:py-8 lg:py-0">
         {/* Logo */}
         <div className="text-2xl font-bold text-yellow-400">
           <img
             src="pizzaLogo.png"
             alt="websiteLogo"
-            className={`${scrolled ? "lg:h-25" : "lg:h-auto"} h-40`}
+            className={`${scrolled ? "lg:h-25" : "lg:h-auto"} h-25`}
           />
         </div>
 
@@ -67,10 +97,12 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-5">
+        <div className="flex justify-center items-center gap-5">
           {/* mobile menu icon starts here */}
-          <div className="lg:hidden md:flex text-white md:order-2 py-4">
-            <Menu size={30} />
+          <div className="lg:hidden md:flex text-white md:order-2 py-4"
+          onClick={()=>setIsopen(!isopen)}
+          >
+            {isopen ? <X size={30}/> :<Menu size={30} />}
           </div>
           {/* search icon and  Button */}
           <div className="flex justify-center items-center gap-5 text-white  md:order-1">
@@ -80,7 +112,7 @@ export default function Navbar() {
                 className="text-xl hover:text-lime-400 cursor-pointer"
               />
             </div>
-            <button className="border-1 lg:border-2 border-white my-4 md:my-0 px-6 py-2 rounded-full text-white hover:bg-lime-400 hover:text-black transition  font-semibold bebas-neue-regular text-2xl uppercase cursor-pointer">
+            <button className="hidden md:flex border-1 lg:border-2 border-white my-4 md:my-0 px-6 py-2 rounded-full text-white hover:bg-lime-400 hover:text-black transition  font-semibold bebas-neue-regular text-2xl uppercase cursor-pointer">
               Book a Table
             </button>
           </div>
@@ -89,11 +121,12 @@ export default function Navbar() {
       {/* mobile search bar starts here */}
       <div className="lg:hidden lg:block flex  justify center items center">
           <input type="search" placeholder="search..."
-      className="bg-[#CFDF5A] w-full py-4 px-6 text-xl text-black placeholder:text-black roboto-slab-small focus:outline-none"
+      className="bg-[#CFDF5A] w-full py-3 px-6 text-xl text-black placeholder:text-black roboto-slab-small focus:outline-none"
       />
       <button className="text-black bg-[#CFDF5A] px-6"><Search/></button>
       </div>
-
+     {isopen && <MobileMenu isOpen={isopen} navItems={navItems} />}
+          
       
     </nav>
   );

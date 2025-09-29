@@ -10,11 +10,11 @@ const stats = [
 export default function StatsSection() {
   return (
     <section className="bg-[#e74c3c] py-18">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
         {stats.map((stat) => (
           <div key={stat.id} className="flex flex-col items-center">
-            <h2 className="text-6xl fredericka-the-great-regular text-white">{stat.value}</h2>
-            <p className="mt-2 text-3xl font-semibold text-white uppercase bebas-neue-regular">
+            <h2 className="text-7xl lg:text-6xl fredericka-the-great-regular text-white">{stat.value}</h2>
+            <p className="mt-2 text-4xl lg:text-3xl font-semibold text-white uppercase bebas-neue-regular">
               {stat.label}
             </p>
           </div>

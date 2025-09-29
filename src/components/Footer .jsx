@@ -14,7 +14,7 @@ const Footer = () => {
         />
 
         {/* Navigation Links */}
-        <div className="flex space-x-6 text-lg pacifico-regular">
+        <div className="flex space-x-10 text-lg pacifico-regular">
           <a href="#" className="hover:underline">
             Reservations
           </a>
@@ -46,7 +46,7 @@ const Footer = () => {
         <div className="w-full border-t border-dashed border-zinc-700 mt-6"></div>
 
         {/* Bottom Text */}
-        <div className="text-sm text-center mt-4 px-4">
+        <div className="text-sm text-center lg:mt-4 px-4">
           <span className="font-semibold roboto-slab-small">Privacy Policy</span> / This is a sample website - cmsmasters © 2025 / All Rights Reserved
         </div>
       </div>

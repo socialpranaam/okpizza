@@ -15,9 +15,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <div className='hidden lg:block'>
-         <Hero />
-      </div>
+      <Hero />
       <About/>
       <NewsSection/>
       <QualitySection/>
