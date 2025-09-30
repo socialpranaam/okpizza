@@ -107,16 +107,16 @@ const MenuSection = () => {
       </p>
 
       {/* Menu Categories */}
-      <div className="flex flex-col md:flex-row space-x-50 mb-6 border-b border-zinc-600">
+      <div className="flex flex-row space-x-2 md:space-x-20 lg:space-x-50 mb-6 border-b border-zinc-600">
         <div
           onClick={() => { 
             setCurrentMenu("pizza"); 
             setActiveMenu("pizza"); 
           }}
-          className={`flex flex-col justify-center items-center w-full pb-6 ${activeMenu === "pizza" ? " border-b-2 border-[#F4452C]" : ''}`}
+          className={`flex flex-col justify-center items-center w-full pb-4 ${activeMenu === "pizza" ? " border border-[#F4452C] bg-zinc-900/60" : ''}`}
         >
-          <img src={pizzaImg} alt="Pizza Image" className="h-30 lg:h-36" />
-          <button className="text-[#F4452C] text-2xl lg:text-3xl pacifico-regular">
+          <img src={pizzaImg} alt="Pizza Image" className="h-18 md:h-30 lg:h-36" />
+          <button className="text-[#F4452C] text-xl lg:text-3xl pacifico-regular">
             Pizza
           </button>
         </div>
@@ -126,10 +126,10 @@ const MenuSection = () => {
             setCurrentMenu("sandwiches"); 
             setActiveMenu("sandwiches"); 
           }}
-          className={`flex flex-col justify-center items-center w-full pb-6 ${activeMenu === "sandwiches" ? "border-b-2 border-[#F1703D]" : ''}`}
+          className={`flex flex-col justify-center items-center w-full pb-6 px-1 ${activeMenu === "sandwiches" ? "border border-[#F1703D]  bg-zinc-900/60" : ''}`}
         >
-          <img src={burgerImg} alt="Burger Image" className="h-30 lg:h-36" />
-          <button className="text-[#F1703D] text-2xl lg:text-3xl pacifico-regular">
+          <img src={burgerImg} alt="Burger Image" className="h-18 md:h-30 lg:h-36" />
+          <button className="text-[#F1703D] text-xl lg:text-3xl pacifico-regular">
             Sandwiches
           </button>
         </div>
@@ -139,10 +139,10 @@ const MenuSection = () => {
             setCurrentMenu("drinks"); 
             setActiveMenu("drinks"); 
           }}
-          className={`flex flex-col justify-center items-center w-full pb-6 ${activeMenu === "drinks" ? "border-b-2 border-[#FEBA11]" : ''}`}
+          className={`flex flex-col justify-center items-center w-full pb-6 ${activeMenu === "drinks" ? "border-b-2 border-[#FEBA11]  bg-zinc-900/60 rounded-xl" : ''}`}
         >
-          <img src={drinksImg} alt="Drinks Image" className="h-30 lg:h-36" />
-          <button className="text-[#FEBA11] text-2xl lg:text-3xl pacifico-regular">
+          <img src={drinksImg} alt="Drinks Image" className="h-18 md:h-30 lg:h-36" />
+          <button className="text-[#FEBA11] text-xl lg:text-3xl pacifico-regular">
             Drinks
           </button>
         </div>
@@ -152,10 +152,10 @@ const MenuSection = () => {
             setCurrentMenu("desserts"); 
             setActiveMenu("desserts"); 
           }}
-          className={`flex flex-col justify-center items-center w-full pb-6 ${activeMenu === "desserts" ? "border-b-2 border-[#CFDF5A]" : ''}`}
+          className={`flex flex-col justify-center items-center w-full pb-6 ${activeMenu === "desserts" ? "border-b-2 border-[#CFDF5A]  bg-zinc-900/60 rounded-xl" : ''}`}
         >
-          <img src={dessertImg} alt="Dessert Image" className="h-30 lg:h-36" />
-          <button className="text-[#CFDF5A] text-2xl lg:text-3xl pacifico-regular">
+          <img src={dessertImg} alt="Dessert Image" className="h-18 md:h-30 lg:h-36" />
+          <button className="text-[#CFDF5A] text-xl lg:text-3xl pacifico-regular">
             Desserts
           </button>
         </div>
@@ -164,16 +164,16 @@ const MenuSection = () => {
       {/* Menu Items */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-6">
         {menuItems[currentMenu].map((item, index) => (
-          <div key={index} className=" p-3 flex flex-col justify-center ">
-            <div className="flex flex-row justify-between items-center border-b border-dashed border-zinc-600 py-2">
-              <h3 className="text-3xl font-semibold uppercase bebas-neue-regular">
+          <div key={index} className=" p-3 flex flex-col justify-center border-b border-dashed border-zinc-600 ">
+            <div className="flex flex-row justify-between items-center ">
+              <h3 className="text-2xl md:text-2xl lg:text-3xl font-semibold uppercase bebas-neue-regular">
                 {item.name}
               </h3>
-              <p className="text-3xl text-[#CFDF5A] mb-4 pacifico-regular">
+              <p className="text-2xl md:text-3xl text-[#CFDF5A] mb-2 lg:mb-4 pacifico-regular">
                 {item.price}
               </p>
             </div>
-            <p className="text-base font-bold text-start py-2 roboto-slab-small">
+            <p className="text-base font-bold text-start py-1 md:py-2 roboto-slab-small">
               {item.description}
             </p>
           </div>

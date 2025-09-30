@@ -56,7 +56,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden">
+    <section id="home" className="relative h-125 mt-[70px] md:mt-0 lg:mt-0  md:h-screen w-full overflow-hidden">
       {/* Slides background only */}
       {slides.map((slide, index) => (
         <div
@@ -218,7 +218,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.h1
-          className="text-4xl md:text-6xl font-semibold lg:mb-4 mt-6 lg:mt-0 drop-shadow-lg text-zinc-800 bebas-neue-regular"
+          className="text-4xl md:text-6xl font-semibold lg:mb-4 mt-7 lg:mt-0 drop-shadow-lg text-zinc-800 bebas-neue-regular"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
@@ -227,7 +227,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          className="text-base md:text-3xl lg:px-4 py-2 rounded-md inline-block drop-shadow-lg"
+          className="text-base md:text-3xl lg:px-4 py-1 rounded-md inline-block drop-shadow-lg mt-5 lg:mt-0"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}

@@ -41,12 +41,16 @@ const About = () => {
   const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow, // ✅ media query se decide
     slidesToScroll: 1,
     arrows: false,
     centerMode: true,
+    autoplay: true,
+    autoplaySpeed: 2000, 
     centerPadding: "0px",
+    pauseOnFocus: false,
+    pauseOnHover: false,
   };
 
   return (

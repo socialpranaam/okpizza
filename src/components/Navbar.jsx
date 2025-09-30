@@ -66,13 +66,13 @@ export default function Navbar() {
         scrolled ? "lg:bg-zinc-800 shadow-md" : "lg:bg-transparent"
       }`}
     >
-      <div className="px-[3vw] lg:px-[3vw] flex items-center justify-between lg:py-8 lg:py-0">
+      <div className="px-[3vw] lg:px-[3vw] flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold text-yellow-400">
           <img
             src="pizzaLogo.png"
             alt="websiteLogo"
-            className={`${scrolled ? "lg:h-25" : "lg:h-auto"} h-25`}
+            className={`${scrolled ? "lg:h-25" : "lg:h-auto"} h-22`}
           />
         </div>
 
@@ -117,13 +117,6 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-      </div>
-      {/* mobile search bar starts here */}
-      <div className="lg:hidden lg:block flex  justify center items center">
-          <input type="search" placeholder="search..."
-      className="bg-[#CFDF5A] w-full py-3 px-6 text-xl text-black placeholder:text-black roboto-slab-small focus:outline-none"
-      />
-      <button className="text-black bg-[#CFDF5A] px-6"><Search/></button>
       </div>
      {isopen && <MobileMenu isOpen={isopen} navItems={navItems} />}
           
