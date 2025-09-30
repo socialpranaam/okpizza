@@ -62,8 +62,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-zinc-800 ${
-        scrolled ? "lg:bg-zinc-800 shadow-md" : "lg:bg-transparent"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300  ${
+        scrolled ? "backdrop-blur-md shadow-lg" : "lg:bg-transparent"
       }`}
     >
       <div className="px-[3vw] lg:px-[3vw] flex items-center justify-between">
@@ -72,7 +72,7 @@ export default function Navbar() {
           <img
             src="pizzaLogo.png"
             alt="websiteLogo"
-            className={`${scrolled ? "lg:h-25" : "lg:h-auto"} h-22`}
+            className={`${scrolled ? "lg:h-25" : "lg:h-30 mt-1"} h-22`}
           />
         </div>
 

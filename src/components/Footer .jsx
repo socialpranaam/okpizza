@@ -4,13 +4,13 @@ import { Facebook, Instagram, LucideTwitch, Twitter } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-800 text-white py-18 px-4">
+    <footer className="bg-zinc-800 text-white py-12 lg:py-18 px-4">
       <div className="flex flex-col items-center space-y-6">
         {/* Logo */}
         <img
-          src={logo}
+          src="pizzaLogo.png"
           alt="Pizza Logo"
-          className="w-36 h-auto mb-12"
+          className="w-42 h-auto mb-12"
         />
 
         {/* Navigation Links */}

@@ -56,7 +56,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative h-125 mt-[70px] md:mt-0 lg:mt-0  md:h-screen w-full overflow-hidden">
+    <section id="home" className="relative h-142    md:h-screen w-full overflow-hidden">
       {/* Slides background only */}
       {slides.map((slide, index) => (
         <div

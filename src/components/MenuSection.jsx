@@ -113,7 +113,7 @@ const MenuSection = () => {
             setCurrentMenu("pizza"); 
             setActiveMenu("pizza"); 
           }}
-          className={`flex flex-col justify-center items-center w-full pb-4 ${activeMenu === "pizza" ? " border border-[#F4452C] bg-zinc-900/60" : ''}`}
+          className={`flex flex-col justify-center items-center w-full pb-4 ${activeMenu === "pizza" ? " border-b-4 rounded-xl border-[#F4452C] bg-zinc-900/60" : ''}`}
         >
           <img src={pizzaImg} alt="Pizza Image" className="h-18 md:h-30 lg:h-36" />
           <button className="text-[#F4452C] text-xl lg:text-3xl pacifico-regular">
@@ -126,7 +126,7 @@ const MenuSection = () => {
             setCurrentMenu("sandwiches"); 
             setActiveMenu("sandwiches"); 
           }}
-          className={`flex flex-col justify-center items-center w-full pb-6 px-1 ${activeMenu === "sandwiches" ? "border border-[#F1703D]  bg-zinc-900/60" : ''}`}
+          className={`flex flex-col justify-center items-center w-full pb-6 px-1 ${activeMenu === "sandwiches" ? "border-b-4 rounded-xl border-[#F1703D]  bg-zinc-900/60" : ''}`}
         >
           <img src={burgerImg} alt="Burger Image" className="h-18 md:h-30 lg:h-36" />
           <button className="text-[#F1703D] text-xl lg:text-3xl pacifico-regular">
@@ -139,7 +139,7 @@ const MenuSection = () => {
             setCurrentMenu("drinks"); 
             setActiveMenu("drinks"); 
           }}
-          className={`flex flex-col justify-center items-center w-full pb-6 ${activeMenu === "drinks" ? "border-b-2 border-[#FEBA11]  bg-zinc-900/60 rounded-xl" : ''}`}
+          className={`flex flex-col justify-center items-center w-full pb-6 ${activeMenu === "drinks" ? "border-b-4 border-[#FEBA11]  bg-zinc-900/60 rounded-xl" : ''}`}
         >
           <img src={drinksImg} alt="Drinks Image" className="h-18 md:h-30 lg:h-36" />
           <button className="text-[#FEBA11] text-xl lg:text-3xl pacifico-regular">
@@ -152,7 +152,7 @@ const MenuSection = () => {
             setCurrentMenu("desserts"); 
             setActiveMenu("desserts"); 
           }}
-          className={`flex flex-col justify-center items-center w-full pb-6 ${activeMenu === "desserts" ? "border-b-2 border-[#CFDF5A]  bg-zinc-900/60 rounded-xl" : ''}`}
+          className={`flex flex-col justify-center items-center w-full pb-6 ${activeMenu === "desserts" ? "border-b-4 border-[#CFDF5A]  bg-zinc-900/60 rounded-xl" : ''}`}
         >
           <img src={dessertImg} alt="Dessert Image" className="h-18 md:h-30 lg:h-36" />
           <button className="text-[#CFDF5A] text-xl lg:text-3xl pacifico-regular">
